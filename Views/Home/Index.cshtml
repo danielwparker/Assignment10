@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IndexViewModel
+
+    <div class="grid-container">
+        @foreach (var x in Model.Bowlers)
+        {
+            <div class="grid-item">
+                <h5>@x.BowlerFirstName @x.BowlerMiddleInit @x.BowlerLastName</h5>
+                <p>@x.BowlerAddress</p>
+                <p>@x.BowlerCity, @x.BowlerState @x.BowlerZip</p>
+                <p>@x.BowlerPhoneNumber</p>
+            </div>
+        }
+    </div>
+    <div page-info="@Model.PageNumberInfo" page-url-teamname="@Model.Team" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-warning">
+
+    </div>
